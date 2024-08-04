@@ -1,42 +1,51 @@
-# iCRUD_FileManager 🗃️
+# CRUD File Manager 🗃️
 
-`iCRUD_FileManager` is a Swift package for performing basic file operations. It provides methods to create, read, update, and delete files and directories. This package uses Swift's concurrency model with actors to handle file operations safely and efficiently.
+`crud-file-manager-swift` is a Swift package for performing basic file operations. It provides methods to create, read, update, and delete files and directories. This package uses Swift's concurrency model with actors to handle file operations safely and efficiently.
 
-## Features
+## ✨ Features
 
 - **Create**: Create directories and files at specified paths.
 - **Read**: Read the contents of files.
 - **Update**: Update the contents of existing files.
 - **Delete**: Delete files and directories.
 
-## Requirements
+## 👨🏻‍💻 Requirements
 
 - Swift 5.7 or later
 - iOS 16.0+ / macOS 14.0+ / other platforms supporting Swift Concurrency
 
-## Installation
+## 🛠️ Installation
 
-To add `iCRUD_FileManager` to your Swift project using Swift Package Manager, add the following dependency to your `Package.swift`:
+To add `CRUD File Manager` to your Swift project using Swift Package Manager, add the following dependency to your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/KDTechniques/iCRUD-File-Manager.git", from: "1.0.0")
+    .package(url: "https://github.com/KDTechniques/crud-file-manager-swift.git", from: "1.0.0")
 ]
 ```
 
-## Usage
+## 📖 Usage
 
 ### Creating an Instance
 
-Import the package and create an instance of `iCRUD_FileManager` with a type that conforms to `RawRepresentable & Sendable` where `RawValue` is `String`.
+Import the package and create an instance of `CRUDFileManager` with a type that conforms to `RawRepresentable & Sendable` where `RawValue` is `String`.
 
 ```swift
-import iCRUD_FileManager
+import CRUDFileManager
 
-let fileManager = iCRUD_FileManager<YourSubDirectoriesType>()
+let fileManager = CRUDFileManager<YourSubDirectoriesType>()
 ```
 
-Replace `YourSubDirectoriesType` with a type that meets these requirements.
+Replace `YourSubDirectoriesType` with a type that meets the above requirements.
+
+```swift
+enum YourSubDirectoriesType: String {
+    case exampleSubDir1
+    case exampleSubDir2
+    case exampleSubDir3
+    ...
+}
+```
 
 ### Creating a Directory
 
@@ -141,9 +150,9 @@ do {
 }
 ```
 
-## Error Handling
+## 🚫 Error Handling
 
-The `iCRUD_FileManager` package defines custom error types in the `ErrorTypes_Enum` enum:
+The `CRUD File Manager` package defines custom error types in the `ErrorTypes_Enum` enum:
 
 - `pathDoesNotExist(String)`: The path does not exist.
 - `pathAlreadyExists(String)`: The path already exists.
@@ -152,10 +161,8 @@ The `iCRUD_FileManager` package defines custom error types in the `ErrorTypes_En
 
 These errors provide descriptive messages to help with debugging issues related to file paths and operations.
 
-## License
+## 🤝 Contribution
+Contributions are welcome! If you have suggestions or improvements, please submit a pull request or open an issue on GitHub.
 
+## 📜 License
 This package is licensed under the MIT License. See the [LICENSE](https://github.com/KDTechniques/iCRUD-File-Manager/blob/main/LICENSE) file for more details.
-
----
-
-Feel free to contribute by opening issues or pull requests. For more information, refer to the documentation and source code.
